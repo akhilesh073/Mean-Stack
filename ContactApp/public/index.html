@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Contact List APP</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+	
+
+
+</head>
+
+<body>
+	<div class="container" ng-controller="AppCtrl">
+		<h1>Contact List App</h1>
+		<table class="table table-striped table-bordered">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Email</th>
+					<th>Number</th>
+					<th>Action</th>
+					<th>&nbsp;</th>
+					<th>&nbsp;</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><input class="form-control" ng-model="contact.name"  required="" /></td>
+					<td><input class="form-control" ng-model="contact.email" required="" /></td>
+					<td><input class="form-control" ng-model="contact.contactNo" required="" /></td>
+					<td><button class="btn btn-primary" ng-click="addContact()">Add Contact</button></td>
+					<th><button class="btn btn-info" ng-click="update()">Update</button></th>
+					<th><button class="btn btn-info" ng-click="deselect()">Clear</button></th>
+				</tr>
+				<tr ng-repeat="contact in contactlist">
+					<th>{{contact.name}}</th>
+					<th>{{contact.email}}</th>
+					<th>{{contact.contactNo}}</th>
+					<th><button class="btn btn-danger" ng-click="remove(contact._id)">Remove</button></th>
+					<th><button class="btn btn-warning" ng-click="edit(contact._id)">Edit</button></th>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<!-- Latest compiled and minified JavaScript -->
+<!--	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.13/angular.min.js"></script>-->
+<!--	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>-->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+<script src="controllers/controller.js"></script>
+</body>
+
+</html>
